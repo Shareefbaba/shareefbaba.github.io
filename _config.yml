@@ -25,9 +25,9 @@ author:
   avatar           : "profile.png"
   name             : "Shareef Baba Shaik"
   pronouns         : # example: "she/her"  
-  bio              : "Working as a Project Engineer at SRM University /n Mechanical Engineer "
+  bio              : "Working as a Project Engineer at SRM University/n Mechanical Engineer "
   location         : "Hyderabad, India"
-  employer         : " "
+  employer         :
   uri              : # URL
   email            : "shareefbaba1404@gmail.com" 
 
@@ -38,7 +38,7 @@ author:
   impactstory      : # URL
   orcid            : "http://orcid.org/0009-0000-5243-3762"
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : 
   researchgate     : # URL
   scopus           : # URL
 
@@ -51,14 +51,14 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : 
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  Instagram        : "shareef_14"
+  Instagram        :
   lastfm           : # Username
   linkedin         : "shareefbaba"
   mastodon         : # URL
