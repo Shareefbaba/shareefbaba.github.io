@@ -22,10 +22,10 @@ repository               : "shareefbaba/shareefbaba.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "shareef_pic.png"
   name             : "Shareef Baba Shaik"
   pronouns         : # example: "she/her"  
-  bio              : "Working as a Project Engineer at SRM University/n Mechanical Engineer "
+  bio              : "Working as a Project Engineer at SRM University\n Mechanical Engineer "
   location         : "Hyderabad, India"
   employer         :
   uri              : # URL
