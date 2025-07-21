@@ -23,7 +23,7 @@ Here are a few of my featured designs:
   flex: 1;
   min-width: 250px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .design-section {
     flex-direction: column;
   }
