@@ -1,6 +1,6 @@
 ---
 title: "Robot Operating System, MoveIt2 & Gazebo Simulation"
-excerpt: "A collection of projects involving ROS2-based robotic control, motion planning using MoveIt2, and simulation in Gazebo. These works showcase my skills in building, controlling, and simulating intelligent robotic systems using real-time data, custom URDF models, and autonomous task execution.<br/><img src='/images/cad_design.jpg'>"
+excerpt: "A collection of projects involving ROS2-based robotic control, motion planning using MoveIt2, and simulation in Gazebo. These works showcase my skills in building, controlling, and simulating intelligent robotic systems using real-time data, custom URDF models, and autonomous task execution.<br/><img src='/images/ros2_moveit2.jpg'>"
 collection: portfolio
 ---
 
