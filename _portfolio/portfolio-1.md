@@ -1,6 +1,6 @@
 ---
 title: "Designs"
-excerpt: "A collection of my mechanical and 3D designs, created using tools like SolidWorks and CATIA. These projects highlight my interest in design fundamentals and real-world applications. 1<br/><img src='/images/my_cad_designs.png'>"
+excerpt: "A collection of my mechanical and 3D designs, created using tools like SolidWorks and CATIA. These projects highlight my interest in design fundamentals and real-world applications. 1<br/><img src='/images/cad_design.jpg'>"
 collection: portfolio
 ---
 
