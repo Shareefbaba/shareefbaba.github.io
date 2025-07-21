@@ -38,7 +38,7 @@ Here are a few of my featured designs:
 ---
 
 <div class="design-section">
-  <img src="/assets/images/designs/air_craft_design.png" alt="Landing Gear Design">
+  <img src="/images/air_craft_design.png" alt="Landing Gear Design">
   <div class="desc">
     <h3>🛬 Twin-Wheel Aircraft Landing Gear</h3>
     <p>• Designed a twin-wheel aircraft landing gear assembly using SolidWorks, focusing on structural integrity and realistic component dimensions.
@@ -47,7 +47,7 @@ Here are a few of my featured designs:
 </div>
 
 <div class="design-section">
-  <img src="/assets/images/designs/500x300.png" alt="Two-Wheeler Suspension System">
+  <img src="/images/500x300.png" alt="Two-Wheeler Suspension System">
   <div class="desc">
     <h3>🛵 Two-Wheeler Suspension System</h3>
     <p>Created using CATIA, this model highlights spring dynamics and real-world two-wheeler suspension performance.</p>
@@ -55,7 +55,7 @@ Here are a few of my featured designs:
 </div>
 
 <div class="design-section">
-  <img src="/assets/images/designs/500x300.png" alt="LEGO-style Character">
+  <img src="/images/500x300.png" alt="LEGO-style Character">
   <div class="desc">
     <h3>🧱 LEGO-style 3D Character</h3>
     <p>Modeled a fun, LEGO-style figure in SolidWorks to explore 3D modeling techniques and creative design skills.</p>
@@ -63,7 +63,7 @@ Here are a few of my featured designs:
 </div>
 
 <div class="design-section">
-  <img src="/assets/images/designs/500x300.png" alt="Radial Drilling Machine">
+  <img src="/images/500x300.png" alt="Radial Drilling Machine">
   <div class="desc">
     <h3>🛠️ Radial Drilling Machine Prototype</h3>
     <p>A detailed working prototype designed for my diploma project, built to demonstrate real-world drilling mechanics.</p>
