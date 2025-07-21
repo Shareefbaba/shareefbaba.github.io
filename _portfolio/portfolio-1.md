@@ -1,6 +1,6 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Designs"
+excerpt: "A collection of my mechanical and 3D designs, created using tools like SolidWorks and CATIA. These projects highlight my interest in design fundamentals and real-world applications. 1<br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
 
