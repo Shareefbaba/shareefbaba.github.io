@@ -6,36 +6,65 @@ collection: portfolio
 
 Here are a few of my featured designs:
 
----
 
-### 🛬 Twin-Wheel Aircraft Landing Gear
-<img src="/assets/images/designs/landing-gear.jpg" width="600"/>
-
-**Tool:** SolidWorks  
-**Summary:** Designed a complete landing gear assembly with twin wheels and selected materials for aerospace applications.
-
----
-
-### 🛵 Two-Wheeler Suspension System
-<img src="/assets/images/designs/suspension.jpg" width="600"/>
-
-**Tool:** CATIA  
-**Summary:** Developed a full suspension model suitable for modern two-wheelers, focusing on spring dynamics and durability.
-
----
-
-### 🧱 LEGO-style 3D Character
-<img src="/assets/images/designs/lego-character.jpg" width="600"/>
-
-**Tool:** SolidWorks  
-**Summary:** Designed a stylized LEGO-like character for creative modeling practice and design exploration.
-
----
-
-### 🛠️ Radial Drilling Machine Prototype
-<img src="/assets/images/designs/drilling-machine.jpg" width="600"/>
-
-**Tool:** SolidWorks  
-**Summary:** Designed and fabricated a working prototype of a radial drilling machine for diploma project.
+<style>
+.design-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.design-section img {
+  max-width: 45%;
+  border-radius: 10px;
+  margin-right: 5%;
+}
+.design-section .desc {
+  flex: 1;
+  min-width: 250px;
+}
+@media (max-width: 768px) {
+  .design-section {
+    flex-direction: column;
+  }
+  .design-section img {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+</style>
 
 ---
+
+<div class="design-section">
+  <img src="/assets/images/designs/500x300.png" alt="Landing Gear Design">
+  <div class="desc">
+    <h3>🛬 Twin-Wheel Aircraft Landing Gear</h3>
+    <p>Designed in SolidWorks, this aircraft landing gear assembly features twin wheels and optimized material selection for aerospace use.</p>
+  </div>
+</div>
+
+<div class="design-section">
+  <img src="/assets/images/designs/500x300.png" alt="Two-Wheeler Suspension System">
+  <div class="desc">
+    <h3>🛵 Two-Wheeler Suspension System</h3>
+    <p>Created using CATIA, this model highlights spring dynamics and real-world two-wheeler suspension performance.</p>
+  </div>
+</div>
+
+<div class="design-section">
+  <img src="/assets/images/designs/500x300.png" alt="LEGO-style Character">
+  <div class="desc">
+    <h3>🧱 LEGO-style 3D Character</h3>
+    <p>Modeled a fun, LEGO-style figure in SolidWorks to explore 3D modeling techniques and creative design skills.</p>
+  </div>
+</div>
+
+<div class="design-section">
+  <img src="/assets/images/designs/500x300.png" alt="Radial Drilling Machine">
+  <div class="desc">
+    <h3>🛠️ Radial Drilling Machine Prototype</h3>
+    <p>A detailed working prototype designed for my diploma project, built to demonstrate real-world drilling mechanics.</p>
+  </div>
+</div>
