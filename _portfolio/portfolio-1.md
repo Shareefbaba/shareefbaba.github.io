@@ -38,10 +38,11 @@ Here are a few of my featured designs:
 ---
 
 <div class="design-section">
-  <img src="/assets/images/designs/500x300.png" alt="Landing Gear Design">
+  <img src="/assets/images/designs/air_craft_design.png" alt="Landing Gear Design">
   <div class="desc">
     <h3>🛬 Twin-Wheel Aircraft Landing Gear</h3>
-    <p>Designed in SolidWorks, this aircraft landing gear assembly features twin wheels and optimized material selection for aerospace use.</p>
+    <p>• Designed a twin-wheel aircraft landing gear assembly using SolidWorks, focusing on structural integrity and realistic component dimensions.
+    • Performed material selection to ensure durability lightweight construction, and manufacturability.</p>
   </div>
 </div>
 
