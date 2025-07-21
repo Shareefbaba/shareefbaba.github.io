@@ -50,6 +50,18 @@ Here are a few of my featured designs:
 </div>
 
 <div class="design-section">
+  <img src="/images/drill_mechanism.png" alt="Miniaturized Robotic Tendon-Driven Articulated Surgical Drill">
+  <div class="desc">
+    <h3>🧠 Miniaturized Robotic Tendon-Driven Articulated Surgical Drill</h3>
+    <ul>
+        <li> Designed a compact articulated surgical drill mechanism using SolidWorks, integrating tendon-driven actuation for enhanced distal dexterity in minimally invasive spine fusion procedures</li>
+        <li>Modeled the dual U-joint transmission with detailed gear and tendon path configuration, ensuring smooth articulation through precise mechanical constraints.</li>
+        <li>Validated assembly readiness through CAD modeling and simulation, laying groundwork for prototyping, with emphasis on miniaturization and surgical functionality.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="design-section">
   <img src="/images/single_cylinder_engine .png" alt="Single Cylinder Engine">
   <div class="desc">
     <h3>🛠️ Single Cylinder Engine Design</h3>
