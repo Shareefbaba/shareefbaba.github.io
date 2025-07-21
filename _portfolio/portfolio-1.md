@@ -42,33 +42,46 @@ Here are a few of my featured designs:
   <div class="desc">
     <h3>🛬 Twin-Wheel Aircraft Landing Gear</h3>
     <ul>
-      <li>Designed a twin-wheel aircraft landing gear assembly using SolidWorks, focusing on structural integrity and realistic component dimensions.</li>
-      <li>Performed material selection to ensure durability lightweight construction, and manufacturability.</li>
+        <li>Designed a twin-wheel aircraft landing gear assembly in SolidWorks, emphasizing realistic proportions, structural strength, and motion functionality.</li>
+        <li>Used precise 3D modeling and strategic material selection (Aluminum alloy and high-strength steel) to optimize durability, weight, and manufacturability.</li>
+        <li>Delivered a complete assembly design, ready for prototyping and performance analysis through thoughtful joint design and design iterations.</li>
     </ul>
   </div>
 </div>
 
 <div class="design-section">
-  <img src="/images/500x300.png" alt="Two-Wheeler Suspension System">
+  <img src="/images/single_cylinder_engine .png" alt="Single Cylinder Engine">
   <div class="desc">
-    <h3>🛵 Two-Wheeler Suspension System</h3>
-    <p>Created using CATIA, this model highlights spring dynamics and real-world two-wheeler suspension performance.</p>
-    
+    <h3>🛠️ Single Cylinder Engine Design</h3>
+    <ul>
+        <li>Designed and assembled a complete single-cylinder engine in CATIA, including all major components like piston, connecting rod, and crankshaft.</li>
+        <li> Applied precise mating constraints and material selection to ensure smooth motion, durability, and thermal efficiency.</li>
+        <li>  Delivered a fully functional 3D engine assembly, ready for simulation and analysis of real-world performance.</li>
+    </ul>
   </div>
 </div>
 
 <div class="design-section">
-  <img src="/images/500x300.png" alt="LEGO-style Character">
+  <img src="/images/lego_robot.png" alt="LEGO-style Character">
   <div class="desc">
     <h3>🧱 LEGO-style 3D Character</h3>
-    <p>Modeled a fun, LEGO-style figure in SolidWorks to explore 3D modeling techniques and creative design skills.</p>
+    <ul>
+        <li> Designed a detailed LEGO-style 3D figure in SolidWorks, focusing on realistic proportions, movable joints, and precise fit between parts.</li>
+        <li>Modeled individual components (head, torso, arms, legs, hat) using proper mating constraints, applied textures/colors, and ensured tolerances suitable for prototyping.</li>
+        <li>Delivered a fully assembled, functional model ready for animation, rendering, or 3D printing, combining aesthetics with mechanical accuracy.</li>
+    </ul>
   </div>
 </div>
 
 <div class="design-section">
-  <img src="/images/500x300.png" alt="Radial Drilling Machine">
+  <img src="/images/suspension_catia.png" alt="Two-Wheeler Suspension System">
   <div class="desc">
-    <h3>🛠️ Radial Drilling Machine Prototype</h3>
-    <p>A detailed working prototype designed for my diploma project, built to demonstrate real-world drilling mechanics.</p>
+    <h3>🛵 Two-Wheeler Suspension System</h3>
+    <ul>
+        <li>Designed and modeled a complete two-wheeler suspension system using CATIA, including key components like springs, shock absorbers, and mounting brackets.  </li>
+        <li>Applied proper mating constraints, GD&T principles, and selected optimal materials (high-strength steel and aluminum alloy) to ensure durability, lightweight construction, and dimensional accuracy.</li>
+        <li>Delivered a realistic 3D assembly with precision fit and smooth operational motion, ready for further dynamic analysis and engineering validation.</li>
+    </ul>
   </div>
 </div>
+
