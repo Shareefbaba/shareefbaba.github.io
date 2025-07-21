@@ -41,8 +41,10 @@ Here are a few of my featured designs:
   <img src="/images/air_craft_design.png" alt="Landing Gear Design">
   <div class="desc">
     <h3>🛬 Twin-Wheel Aircraft Landing Gear</h3>
-    <p>• Designed a twin-wheel aircraft landing gear assembly using SolidWorks, focusing on structural integrity and realistic component dimensions.
-    • Performed material selection to ensure durability lightweight construction, and manufacturability.</p>
+    <ul>
+      <li>Designed a twin-wheel aircraft landing gear assembly using SolidWorks, focusing on structural integrity and realistic component dimensions.</li>
+      <li>Performed material selection to ensure durability lightweight construction, and manufacturability.</li>
+    </ul>
   </div>
 </div>
 
@@ -51,6 +53,7 @@ Here are a few of my featured designs:
   <div class="desc">
     <h3>🛵 Two-Wheeler Suspension System</h3>
     <p>Created using CATIA, this model highlights spring dynamics and real-world two-wheeler suspension performance.</p>
+    
   </div>
 </div>
 
