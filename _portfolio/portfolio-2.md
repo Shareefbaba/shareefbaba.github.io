@@ -39,16 +39,28 @@ Here are a few of my Projects:
 
 <!-- 🚗 Project 1: Two-Bar Arm -->
 <div class="design-section">
-  <img src="/images/drill_mechanism.png" alt="Two-Bar Robotic Arm">
+  <a href="/portfolio/two-bar-arm/">
+    <img src="/images/drill_mechanism.png" alt="Vehicle Arm">
+  </a>
   <div class="desc">
-    <h3><a href="/portfolio/two_bar_arm/">🚗 Vehicle-Mounted Two-Bar Arm (MoveIt2 + RViz2)</a></h3>
+    <h3>
+      <a href="/portfolio/two-bar-arm/">
+        🚗 Vehicle-Mounted Two-Bar Arm (MoveIt2 + RViz2)
+      </a>
+    </h3>
   </div>
 </div>
 
 <!-- 🤖 Project 2: Mobile Robot -->
 <div class="design-section">
-  <img src="/images/air_craft_design.png" alt="Mobile Robot with Arm">
+  <a href="/portfolio/mobile-robot-gazebo/">
+    <img src="/images/mobile_arm_robot.png" alt="Mobile Robot with 2-Axis Arm">
+  </a>
   <div class="desc">
-    <h3><a href="/portfolio/mobile_robot_gazebo/">🤖 Mobile Robot with 2-Axis Arm (Gazebo + RViz2)</a></h3>
+    <h3>
+      <a href="/portfolio/mobile-robot-gazebo/">
+        🤖 Mobile Robot with 2-Axis Arm (Gazebo + RViz2)
+      </a>
+    </h3>
   </div>
 </div>
