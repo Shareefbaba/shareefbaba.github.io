@@ -2,7 +2,7 @@
 title: "Vehicle-Mounted Two-Bar Arm (MoveIt2 + RViz2)"
 excerpt: "Designed and simulated a robotic arm mounted on a vehicle using SolidWorks, URDF, MoveIt2, and RViz2 for path planning and control."
 collection: portfolio
-permalink: /portfolio/vehicle-mounted-two-bar-arm/
+permalink: /portfolio2/two-bar-arm/
 date: 2025-07-21
 ---
 
