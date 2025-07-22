@@ -1,32 +1,32 @@
 ---
 title: "Robot Operating System, MoveIt2 & Gazebo Simulation"
-excerpt: "A collection of projects involving ROS2-based robotic control, motion planning using MoveIt2, and simulation in Gazebo. These works showcase my skills in building, controlling, and simulating intelligent robotic systems using real-time data, custom URDF models, and autonomous task execution.<br/><img src='/images/ros2_moveit2.jpg'>"
+permalink: /portfolio/ros2/
+author_profile: true
+layout: single
 collection: portfolio
 ---
 
-Here are a few of my collection of projects:
-
 <style>
-.design-section {
+.ros2-section {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 2rem;
 }
-.design-section img {
+.ros2-section img {
   max-width: 45%;
   border-radius: 10px;
   margin-right: 5%;
 }
-.design-section .desc {
+.ros2-section .desc {
   flex: 1;
   min-width: 250px;
 }
 @media (max-width: 1000px) {
-  .design-section {
+  .ros2-section {
     flex-direction: column;
   }
-  .design-section img {
+  .ros2-section img {
     max-width: 100%;
     margin-right: 0;
     margin-bottom: 1rem;
@@ -48,15 +48,30 @@ Here are a few of my collection of projects:
   </div>
 </div>
 
+
 <!-- ✅ Project 2 -->
-<div class="design-section">
+<div class="ros2-section">
   <a href="/portfolio/mobile-robot-gazebo/">
-    <img src="/images/air_craft_design.png" alt="Mobile Robot Simulation in ROS2 & Gazebo">
+    <img src="/images/air_craft_design.png" alt="Mobile Robot in Gazebo">
   </a>
   <div class="desc">
     <h3>
       <a href="/portfolio/mobile-robot-gazebo/">
-        Mobile Robot Simulation in ROS2 & Gazebo
+        🤖 Mobile Robot with 2-Axis Arm (Gazebo + RViz2)
+      </a>
+    </h3>
+  </div>
+</div>
+
+<!-- ✅ Project 2 -->
+<div class="ros2-section">
+  <a href="/portfolio/mobile-robot-gazebo/">
+    <img src="/images/air_craft_design.png" alt="Mobile Robot in Gazebo">
+  </a>
+  <div class="desc">
+    <h3>
+      <a href="/portfolio/mobile-robot-gazebo/">
+        🤖 Mobile Robot with 2-Axis Arm (Gazebo + RViz2)
       </a>
     </h3>
   </div>
