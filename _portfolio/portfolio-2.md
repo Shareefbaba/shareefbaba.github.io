@@ -64,3 +64,15 @@ Here are a few of my Projects:
     </h3>
   </div>
 </div>
+
+<div class="design-section">
+  <a href="/portfolio/ongoing-robot-project/">
+    <img src="/images/ongoing_robot.png" alt="Ongoing Robot">
+  </a>
+
+  <h3>
+    <a href="/portfolio/ongoing-robot/">
+      🛠️ Ongoing Project – ROS2-Based Autonomous Inspection Robot
+    </a>
+  </h3>
+</div>

@@ -7,6 +7,8 @@ date: 2025-07-21
 hidden: true
 ---
 
+
+
 <img src="/images/mobile_arm_robot.png" alt="Mobile Robot with 2-Axis Arm" style="max-width: 100%; border-radius: 10px; margin-bottom: 1rem;">
 
 This project demonstrates a simulation of a mobile base robot equipped with a 2-DOF robotic arm in a Gazebo environment. The robot is capable of navigating in a simulated world and executing arm motions via RViz2.
@@ -32,4 +34,3 @@ This project demonstrates a simulation of a mobile base robot equipped with a 2-
 ---
 
 > 🔗 **[View GitHub Repository](https://github.com/your-username/your-repo-link)**  
-(*Replace with your GitHub repo link*)
