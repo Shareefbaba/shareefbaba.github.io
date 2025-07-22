@@ -38,13 +38,15 @@ Here are a few of my collection of projects :
 ---
 
 <div class="design-section">
-  <img src="/images/air_craft_design.png" alt="Landing Gear Design">
+  <img src="/images/air_craft_design.png" alt="Mobile Robot Simulation in ROS2 & Gazebo">
   <div class="desc">
-    <h3>🛬 Twin-Wheel Aircraft Landing Gear</h3>
+    <h3>🚗 Mobile Robot Simulation in ROS2 & Gazebo</h3>
     <ul>
-        <li>Designed a twin-wheel aircraft landing gear assembly in SolidWorks, emphasizing realistic proportions, structural strength, and motion functionality.</li>
-        <li>Used precise 3D modeling and strategic material selection (Aluminum alloy and high-strength steel) to optimize durability, weight, and manufacturability.</li>
-        <li>Delivered a complete assembly design, ready for prototyping and performance analysis through thoughtful joint design and design iterations.</li>
+      <li>Built a differential-drive mobile robot from scratch and simulated it in Gazebo</li>
+      <li>Created the robot using XACRO and URDF with realistic joints, wheels, and sensors (LiDAR, IMU).</li>
+      <li>Configured Gazebo plugins for motion and sensor simulation, and integrated them with ROS2 topics and nodes.</li>
+      <li>Visualized robot transforms and sensor data in RViz, and controlled the robot via ROS2 launch files and teleoperation.</li>
+      <li>Developed a fully functional ROS2-based mobile robot simulation, ready for extension into autonomous navigation or mapping tasks.</li>
     </ul>
   </div>
 </div>
