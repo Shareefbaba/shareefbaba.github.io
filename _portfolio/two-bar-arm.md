@@ -12,7 +12,7 @@ hidden: true
 
 ## 🚗 Vehicle-Mounted Two-Bar Arm (MoveIt2 + RViz2)
 
-<img src="/images/drill_mechanism.png" alt="Two-Bar Arm CAD" style="max-width:100%; border-radius:10px; margin-bottom:1rem;">
+<img src="/images/two_bar_link.png" alt="Two-Bar Arm CAD" style="max-width:100%; border-radius:10px; margin-bottom:1rem;">
 
 A ROS2-based robotic simulation project showcasing mechanical design, path planning, and motion execution.
 
@@ -38,4 +38,4 @@ A ROS2-based robotic simulation project showcasing mechanical design, path plann
 
 ---
 
-> 🔗 **[View Source Code on GitHub](https://github.com/your-username/your-repo-link-here)**  
+> 🔗 **[View Source Code on GitHub](https://github.com/shareefbaba/Vehicle_Mounted_Two_Bar_Arm)**  

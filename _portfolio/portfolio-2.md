@@ -40,7 +40,7 @@ Here are a few of my Projects:
 <!-- 🚗 Project 1: Two-Bar Arm -->
 <div class="design-section">
   <a href="/portfolio/two-bar-arm/">
-    <img src="/images/drill_mechanism.png" alt="Vehicle Arm">
+    <img src="/images/two_bar_link.png" alt="Vehicle Arm">
   </a>
   <div class="desc">
     <h3>
@@ -54,7 +54,7 @@ Here are a few of my Projects:
 <!-- 🤖 Project 2: Mobile Robot -->
 <div class="design-section">
   <a href="/portfolio/mobile-robot-gazebo/">
-    <img src="/images/mobile_arm_robot.png" alt="Mobile Robot with 2-Axis Arm">
+    <img src="/images/two_bar_link.png" alt="Mobile Robot with 2-Axis Arm">
   </a>
   <div class="desc">
     <h3>
