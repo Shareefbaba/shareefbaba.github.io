@@ -11,11 +11,11 @@ main:
   - title: "Projects"
     url: /portfolio/
 
-  - title: "Work Experience"
-    url: /Work Experience/    
+  #- title: "Work Experience"
+   # url: /Work Experience/    
 
-  #- title: "Teaching"
-   # url: /teaching/    
+  - title: "Work Experience"
+    url: /teaching/    
     
   #- title: "Portfolio"
   #  url: /portfolio/

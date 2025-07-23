@@ -10,7 +10,7 @@ hidden: true
 
 ## 🐍 Snake Game using Python & Pygame
 
-<img src="/images/snake_game_preview.png" alt="Snake Game Preview" style="max-width:100%; border-radius:10px; margin-bottom:1rem;">
+<img src="/images/snake_game.png" alt="Snake Game Preview" style="max-width:100%; border-radius:10px; margin-bottom:1rem;">
 
 A classic Snake Game developed using Python and the Pygame library to demonstrate foundational programming logic, real-time game control, and interactive GUI development.
 
@@ -33,5 +33,4 @@ A classic Snake Game developed using Python and the Pygame library to demonstrat
 
 ---
 
-> 🔗 **[View Source Code on GitHub](https://github.com/shareefbaba/snake-game-python)**
-
+> 🔗 **[View Source Code on GitHub](https://github.com/shareefbaba/Snake-Game)**
