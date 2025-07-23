@@ -1,7 +1,7 @@
 ---
 title: "Ongoing Project – ROS2-Based Autonomous Inspection Robot"
 excerpt: "Developing a 4-wheeled robot with LiDAR & camera for indoor mapping and inspection tasks. Integrated with ROS2, RPlidar, and SLAM Toolbox."
-permalink: /portfolio/s/
+permalink: /portfolio/ongoing-robot-project/
 collection: portfolio
 date: 2025-07-22
 hidden: true
@@ -9,7 +9,7 @@ hidden: true
 
 ## 🛠️ Ongoing Project – ROS2-Based Autonomous Inspection Robot
 
-<img src="/images/ongoing_robot.png" alt="Ongoing Robot Project" style="max-width:100%; border-radius:10px; margin-bottom:1rem;">
+<img src="/images/servilance.png" alt="Ongoing Robot Project" style="max-width:100%; border-radius:10px; margin-bottom:1rem;">
 
 This project focuses on building a ROS2-based autonomous robot for indoor inspection, navigation, and real-time mapping.
 

@@ -1,7 +1,7 @@
 ---
 title: "Programming & DIY Projects"
-excerpt: "Short description of portfolio item number 2 <br/><img src='/images/500x300.png'>"
+excerpt: "A series of coding and hardware projects combining Python, Arduino, data analysis, and automation. These projects reflect my practical problem-solving abilities, curiosity, and ability to bring concepts to life.<br/><img src='/images/programming_diy.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+Here are a few of my programming and DIY projects:
