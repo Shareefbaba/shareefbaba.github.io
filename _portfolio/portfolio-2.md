@@ -54,7 +54,7 @@ Here are a few of my Projects:
 <!-- 🤖 Project 2: Mobile Robot -->
 <div class="design-section">
   <a href="/portfolio/mobile-robot-gazebo/">
-    <img src="/images/two_bar_link.png" alt="Mobile Robot with 2-Axis Arm">
+    <img src="/images/mobile_robot.png" alt="Mobile Robot with 2-Axis Arm">
   </a>
   <div class="desc">
     <h3>
@@ -67,11 +67,11 @@ Here are a few of my Projects:
 
 <div class="design-section">
   <a href="/portfolio/ongoing-robot-project/">
-    <img src="/images/ongoing_robot.png" alt="Ongoing Robot">
+    <img src="/images/servilance.png" alt="Ongoing Robot">
   </a>
 
   <h3>
-    <a href="/portfolio/ongoing-robot/">
+    <a href="/portfolio/ongoing-robot-project/">
       🛠️ Ongoing Project – ROS2-Based Autonomous Inspection Robot
     </a>
   </h3>
