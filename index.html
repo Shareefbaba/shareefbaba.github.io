@@ -654,19 +654,14 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Right Column: Terminal Form -->
-                    <div class="contact-terminal">
-                        <div class="terminal-header">
-                            <div class="mac-buttons">
-                                <span class="close"></span>
-                                <span class="minimize"></span>
-                                <span class="maximize"></span>
-                            </div>
-                            <div class="terminal-title">Secure Communication Link</div>
-                        </div>
-
-                        <div class="terminal-body">
+                <!-- Right Column: Professional Glass Form -->
+                <div class="glass-card contact-form-card" style="padding: 50px;">
+                    <div class="form-header" style="margin-bottom: 30px;">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px; color: #fff;">Send a Message</h3>
+                        <p style="font-family: var(--font-mono); color: rgba(255,255,255,0.6); font-size: 0.9rem;">I'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <div class="form-body">
                             <form class="cyber-form" id="contact-form">
                                 <!-- Web3Forms: Replace YOUR_ACCESS_KEY below with your key from web3forms.com -->
                                 <input type="hidden" name="access_key" value="7a8258d3-4971-425e-b340-f9a337eab93a">
@@ -674,40 +669,37 @@
                                 <input type="hidden" name="from_name" value="Shareef Portfolio">
                                 <!-- Honeypot spam protection -->
                                 <input type="checkbox" name="botcheck" style="display:none;">
-
-                                <div class="form-group">
-                                    <input type="text" id="name" name="name" required placeholder=" ">
-                                    <label for="name">Identifier (Name)</label>
-                                    <div class="input-line"></div>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" id="email" name="email" required placeholder=" ">
-                                    <label for="email">Reply Address (Email)</label>
-                                    <div class="input-line"></div>
-                                </div>
-
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                                <div class="input-line"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Email Address</label>
+                                <div class="input-line"></div>
+                            </div>
                                 <div class="form-group">
                                     <textarea id="message" name="message" required placeholder=" " rows="4"></textarea>
-                                    <label for="message">Transmission Payload (Message)</label>
+                                    <label for="message">Your Message</label>
                                     <div class="input-line"></div>
-                                </div>
+                            </div>
 
-                                <!-- Status message shown after submit -->
-                                <div id="form-status"
-                                    style="display:none; font-family: var(--font-mono); font-size: 0.85rem; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
-                                </div>
+                            <!-- Status message shown after submit -->
+                            <div id="form-status"
+                                style="display:none; font-family: var(--font-mono); font-size: 0.85rem; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+                            </div>
 
-                                <button type="submit" class="transmit-btn" id="submit-btn">
-                                    <span class="btn-text">TRANSMIT DATA</span>
-                                    <div class="btn-glitch"></div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="send-icon">
-                                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                    </svg>
-                                </button>
+                            <button type="submit" class="submit-btn" id="submit-btn" style="margin-top: 10px; background: rgba(230, 57, 70, 0.1); border: 1px solid var(--accent-magenta); color: #fff; padding: 15px 30px; font-family: var(--font-mono); font-size: 1rem; letter-spacing: 1px; cursor: pointer; border-radius: 6px; display: flex; justify-content: center; align-items: center; gap: 10px; transition: all 0.3s ease; width: 100%;">
+                                <span class="btn-text">SEND MESSAGE</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="send-icon">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
                             </form>
                         </div>
                     </div>
