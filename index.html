@@ -19,8 +19,7 @@
         rel="stylesheet">
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!-- SortableJS for drag-and-drop -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- SortableJS removed: skills grid is now static -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -103,7 +102,9 @@
         <!-- Navbar -->
         <header class="navbar">
             <div class="nav-logo">
-                <span class="logo-text" data-hover="SHAREEF">PORTFOLIO</span>
+                <a href="index.html" style="text-decoration:none;">
+                    <span class="logo-text" data-hover="SHAREEF">PORTFOLIO</span>
+                </a>
             </div>
             <nav class="nav-links">
                 <a href="index.html#home" class="nav-link active">Home</a>
@@ -747,20 +748,7 @@
     <script src="particles-config.js"></script>
     <script src="script.js"></script>
 
-    <!-- Initialize Drag and Drop for Skills Grid -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var el = document.querySelector('.skills-grid');
-            if (el) {
-                var sortable = Sortable.create(el, {
-                    animation: 250,
-                    ghostClass: 'sortable-ghost', // Class when dragging
-                    chosenClass: 'sortable-chosen', // Class when selected
-                    dragClass: 'sortable-drag' // Class of the dragging item
-                });
-            }
-        });
-    </script>
+    <!-- Skills grid is static, no drag and drop -->
 </body>
 
 </html>
