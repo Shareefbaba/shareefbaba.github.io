@@ -561,8 +561,9 @@ h1, h2, h3, p, a, button {
     }
     
     .profile-image-container {
-        width: 220px;
-        height: 220px;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
         margin: 0 auto;
     }
 
@@ -593,8 +594,10 @@ h1, h2, h3, p, a, button {
     }
     
     .profile-image-container {
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto;
     }
 
     .about-me-box {
