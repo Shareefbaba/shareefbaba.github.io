@@ -260,13 +260,12 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.querySelector('.btn-text').textContent = 'TRANSMITTING...';
 
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
 
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify(data)
+                    // Note: Do NOT set Content-Type header when sending FormData with fetch
+                    body: formData
                 });
                 const result = await response.json();
 
@@ -277,6 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     formStatus.style.border = '1px solid rgba(74,222,128,0.3)';
                     formStatus.textContent = '✓ TRANSMISSION_SUCCESS — Message received. Will respond soon.';
                     contactForm.reset();
+                    const fileNameSpan = document.getElementById('file-name');
+                    if (fileNameSpan) fileNameSpan.textContent = 'Attach File (PDF, DOCX)';
                 } else {
                     throw new Error(result.message);
                 }
@@ -290,6 +291,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitBtn.disabled = false;
                 submitBtn.querySelector('.btn-text').textContent = 'TRANSMIT DATA';
                 setTimeout(() => { formStatus.style.display = 'none'; }, 8000);
+            }
+        });
+    }
+
+    // Handle file input display name
+    const fileInput = document.getElementById('attachment');
+    const fileNameDisplay = document.getElementById('file-name');
+    
+    if (fileInput && fileNameDisplay) {
+        fileInput.addEventListener('change', function(e) {
+            if (this.files && this.files.length > 0) {
+                let fileName = this.files[0].name;
+                // Truncate long file names
+                if (fileName.length > 25) {
+                    fileName = fileName.substring(0, 22) + '...';
+                }
+                fileNameDisplay.textContent = fileName;
+                fileNameDisplay.style.color = '#fff';
+            } else {
+                fileNameDisplay.textContent = 'Attach File (PDF, DOCX)';
+                fileNameDisplay.style.color = 'inherit';
             }
         });
     }
