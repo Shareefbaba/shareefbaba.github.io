@@ -428,20 +428,23 @@ h1, h2, h3, p, a, button {
     font-size: 0.9rem;
     font-weight: 600;
     padding: 12px 24px;
-    background: #e63946; /* Purple button background */
-    color: #fff;
-    border: none;
-    border-radius: 20px; /* Pill shape */
+    background: transparent;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    border-radius: 6px;
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-    background: #b82330;
+    background: rgba(5, 217, 232, 0.1);
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.3);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .social-links {
