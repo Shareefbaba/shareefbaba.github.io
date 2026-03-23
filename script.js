@@ -276,8 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     formStatus.style.border = '1px solid rgba(74,222,128,0.3)';
                     formStatus.textContent = '✓ TRANSMISSION_SUCCESS — Message received. Will respond soon.';
                     contactForm.reset();
-                    const fileNameSpan = document.getElementById('file-name');
-                    if (fileNameSpan) fileNameSpan.textContent = 'Attach File (PDF, DOCX)';
+
                 } else {
                     throw new Error(result.message);
                 }
@@ -286,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 formStatus.style.color = '#e63946';
                 formStatus.style.background = 'rgba(230,57,70,0.08)';
                 formStatus.style.border = '1px solid rgba(230,57,70,0.3)';
-                formStatus.textContent = '✗ TRANSMISSION_FAILED — Email directly: shareefbaba1404@gmail.com';
+                formStatus.textContent = '✗ TRANSMISSION_FAILED — ' + err.message + ' (Original: Email directly: shareefbaba1404@gmail.com)';
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.querySelector('.btn-text').textContent = 'TRANSMIT DATA';
@@ -295,24 +294,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Handle file input display name
-    const fileInput = document.getElementById('attachment');
-    const fileNameDisplay = document.getElementById('file-name');
-    
-    if (fileInput && fileNameDisplay) {
-        fileInput.addEventListener('change', function(e) {
-            if (this.files && this.files.length > 0) {
-                let fileName = this.files[0].name;
-                // Truncate long file names
-                if (fileName.length > 25) {
-                    fileName = fileName.substring(0, 22) + '...';
-                }
-                fileNameDisplay.textContent = fileName;
-                fileNameDisplay.style.color = '#fff';
-            } else {
-                fileNameDisplay.textContent = 'Attach File (PDF, DOCX)';
-                fileNameDisplay.style.color = 'inherit';
-            }
-        });
-    }
+
 });
