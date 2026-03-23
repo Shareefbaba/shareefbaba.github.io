@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Shareef | Robotics Engineer</title>
+    <meta name="description" content="Explore Shareef's robotics R&D projects including autonomous pothole detection, mobile robots with manipulators, trajectory control systems, and more.">
+    <meta property="og:title" content="Projects - Shareef | Robotics Engineer">
+    <meta property="og:description" content="Robotics R&D projects: autonomous systems, ROS 2 simulations, path planning, and hardware integration.">
+    <meta property="og:type" content="website">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loaded">
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <div class="robot-container">
+                <svg viewBox="0 0 100 100" class="robot-svg" width="80" height="80">
+                    <defs>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <path d="M 15 50 Q 50 15 85 50 Q 50 85 15 50 Z" fill="#14141c" stroke="#e63946" stroke-width="2" />
+                    <line x1="30" y1="50" x2="70" y2="50" stroke="#050505" stroke-width="8" stroke-linecap="round" />
+                    <circle cx="40" cy="50" r="4" fill="#e63946" class="glowing-eye" filter="url(#glow)"/>
+                    <circle cx="40" cy="50" r="2" fill="#ffffff" class="glowing-eye-center" />
+                    <line x1="50" y1="32" x2="50" y2="15" stroke="#e63946" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="50" cy="10" r="3" fill="#f4c20d" class="antenna-dot" filter="url(#glow)" />
+                    <path d="M 40 68 L 45 78 L 55 78 L 60 68" fill="none" stroke="#e63946" stroke-width="2"/>
+                    <path class="thruster-fire" d="M 45 78 Q 50 95 55 78" fill="#e63946" opacity="0.6" filter="url(#glow)"/>
+                </svg>
+            </div>
+            <div class="loading-track">
+                <div class="loading-progress" id="progress-bar"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-label">SYSTEM_BOOT</span>
+                <span id="progress-text" class="loading-percentage">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
+    
+    <!-- Navbar -->
+    <header class="navbar" style="position: fixed; background: rgba(5, 5, 10, 0.85); backdrop-filter: blur(10px); z-index: 100;">
+        <div class="nav-logo">
+            <span class="logo-text" data-hover="SHAREEF">PORTFOLIO</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="projects.html" class="nav-link active">Projects</a>
+            <a href="certificates.html" class="nav-link">Certificates</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <a href="resume.pdf" target="_blank" class="nav-link resume-btn">[ Resume ]</a>
+        </nav>
+    </header>
+
+    <!-- Main Content for Projects -->
+    <main class="content-section" style="padding-top: 150px; text-align: center; max-width: 1200px; margin: 0 auto;">
+        
+        <div style="margin-bottom: 60px;">
+            <p style="font-family: var(--font-mono); font-size: 1rem; color: #f4c20d; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase;">System Archives</p>
+            <h1 class="section-title" style="justify-content: center; font-size: 3.5rem; text-shadow: 0 0 20px rgba(230, 57, 70, 0.4);">
+                <span class="highlight" style="color: #fff;">Featured R&D Projects</span>
+            </h1>
+            <p style="color: rgba(255, 255, 255, 0.6); max-width: 700px; margin: 20px auto 0; font-size: 1.1rem; line-height: 1.6;">
+                A comprehensive archive of autonomous systems, control logic, mechanical design, and simulation environments built for the future of robotics. 
+            </p>
+        </div>
+
+        <!-- The new custom HUD layout structure goes here (CSS added next) -->
+        <div class="hud-projects-container">
+
+            <div class="hud-project-panel">
+                <div class="hud-number">01</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Autonomous Pothole Detection & Repair</h3>
+                    <div class="hud-tech">ROS2 | Gazebo | MoveIt2 | OpenCV | LiDAR | ZED 2i | SolidWorks</div>
+                    <ul class="hud-desc">
+                        <li>Designed complete robotic system including mechanical structure and actuator mechanisms.</li>
+                        <li>Built ROS2 simulation environment for motion planning and autonomous tasks.</li>
+                        <li>Collected real-world pothole datasets using LiDAR + depth cameras.</li>
+                        <li>Developed perception pipeline and robot control logic.</li>
+                        <li>Supported patent documentation and research content creation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hud-project-panel alt">
+                <div class="hud-number">02</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Vehicle-Mounted Two-Bar Arm</h3>
+                    <div class="hud-tech">SolidWorks | ROS2 | MoveIt2 | URDF | XACRO | RViz2 | C++</div>
+                    <ul class="hud-desc">
+                        <li>Designed and simulated a 2-link robotic arm using SolidWorks & URDF.</li>
+                        <li>Built MoveIt2 configuration (SRDF, controllers, launch files).</li>
+                        <li>Performed trajectory simulations and motion planning in RViz2.</li>
+                    </ul>
+                    <a href="https://github.com/Shareefbaba/Vehicle_Mounted_Two_Bar_Arm" target="_blank" class="hud-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        Access Repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="hud-project-panel">
+                <div class="hud-number">03</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Mobile Robot with 2-Axis Arm</h3>
+                    <div class="hud-tech">ROS2 | Gazebo | RViz2 | XACRO | TF2 | Python</div>
+                    <ul class="hud-desc">
+                        <li>Simulated a mobile robot with a 2-DOF arm.</li>
+                        <li>Created URDF & XACRO with TF frames for accurate visualization.</li>
+                        <li>Integrated depth camera and validated full mobility + manipulation.</li>
+                    </ul>
+                    <a href="https://github.com/Shareefbaba/mobile_robot_Gazebo_project" target="_blank" class="hud-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        Access Repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="hud-project-panel alt">
+                <div class="hud-number">04</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Trajectory Control & Path Smoothing System</h3>
+                    <div class="hud-tech">Python | ROS2 | Splines | Kinematics | Matplotlib</div>
+                    <ul class="hud-desc">
+                        <li>Implemented spline-based path smoothing.</li>
+                        <li>Developed a trajectory tracking controller for differential-drive robots.</li>
+                        <li>Generated time-parameterized trajectories and validated performance.</li>
+                    </ul>
+                    <a href="https://github.com/Shareefbaba/path-smoothing-and-control_shareef" target="_blank" class="hud-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        Access Repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="hud-project-panel">
+                <div class="hud-number">05</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Snake Game</h3>
+                    <div class="hud-tech">Python3 | Pygame</div>
+                    <ul class="hud-desc">
+                        <li>Developed a classic Snake game with OOP architecture.</li>
+                        <li>Implemented game logic, collision detection, scoring system, and difficulty levels.</li>
+                    </ul>
+                    <a href="https://github.com/Shareefbaba/Snake-Game" target="_blank" class="hud-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        Access Repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="hud-project-panel alt">
+                <div class="hud-number">06</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Power Gen Using Speed Breaker</h3>
+                    <div class="hud-tech">SolidWorks | Mechanical Tools | Sensors | DC Gen</div>
+                    <ul class="hud-desc">
+                        <li>Designed system to convert vehicular kinetic energy into electricity.</li>
+                        <li>Demonstrated mechanical-to-electrical power conversion for streetlights.</li>
+                        <li>Promoted renewable, low-cost energy solutions for urban infrastructure.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hud-project-panel">
+                <div class="hud-number">07</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Design & Study of Two-Wheeler Suspension</h3>
+                    <div class="hud-tech">CATIA V5 | Assembly | Simulation Tools</div>
+                    <ul class="hud-desc">
+                        <li>Designed full suspension system.</li>
+                        <li>Performed simulation and structural validation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hud-project-panel alt">
+                <div class="hud-number">08</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">Single Cylinder Engine Design</h3>
+                    <div class="hud-tech">CATIA V5 | Part Modeling | Assembly</div>
+                    <ul class="hud-desc">
+                        <li>Designed a complete engine model.</li>
+                        <li>Created drafting and assembly diagrams.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hud-project-panel">
+                <div class="hud-number">09</div>
+                <div class="hud-content">
+                    <h3 class="hud-title">DIY Robotics Projects</h3>
+                    <div class="hud-tech">Arduino | C++ | MIT App Inventor | BlueTooth | Sensors</div>
+                    <ul class="hud-desc">
+                        <li>Obstacle Avoiding Robot</li>
+                        <li>Line Following Robot</li>
+                        <li>Mobile-Controlled Robot</li>
+                        <li>Voice-Controlled Rover</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Custom Footer -->
+    <footer class="custom-footer" style="margin-top: 80px;">
+        <div class="footer-logo">
+            <svg viewBox="0 0 100 100" class="footer-svg" width="60" height="60">
+                <path d="M 15 50 Q 50 15 85 50 Q 50 85 15 50 Z" fill="#14141c" stroke="#fff" stroke-width="2" />
+                <line x1="30" y1="50" x2="70" y2="50" stroke="#050505" stroke-width="8" stroke-linecap="round" />
+                <circle cx="40" cy="50" r="4" fill="#fff" />
+                <line x1="50" y1="32" x2="50" y2="15" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                <circle cx="50" cy="10" r="3" fill="#fff" />
+                <path d="M 40 68 L 45 78 L 55 78 L 60 68" fill="none" stroke="#fff" stroke-width="2"/>
+            </svg>
+        </div>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="certificates.html">Certificates</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 All rights reserved by Shareef</p>
+        </div>
+        <a href="#" class="back-to-top" title="Back to top">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </a>
+    </footer>
+
+    <script src="particles-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareef | Robotics Engineer</title>
+    <meta name="description" content="Shareef — Robotics Engineer specializing in autonomous systems, ROS 2, computer vision, and intelligent robotics. View my projects, skills, and experience.">
+    <meta property="og:title" content="Shareef | Robotics Engineer">
+    <meta property="og:description" content="Robotics Engineer specializing in autonomous systems, ROS 2, and machine intelligence.">
+    <meta property="og:type" content="website">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- SortableJS for drag-and-drop -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <div class="robot-container">
+                <!-- SVG Simple Sleek Robot/Drone -->
+                <svg viewBox="0 0 100 100" class="robot-svg" width="80" height="80">
+                    <defs>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <!-- Drone Body -->
+                    <path d="M 15 50 Q 50 15 85 50 Q 50 85 15 50 Z" fill="#14141c" stroke="#e63946" stroke-width="2" />
+                    <!-- Eye Track -->
+                    <line x1="30" y1="50" x2="70" y2="50" stroke="#050505" stroke-width="8" stroke-linecap="round" />
+                    <!-- Glowing Eye -->
+                    <circle cx="40" cy="50" r="4" fill="#e63946" class="glowing-eye" filter="url(#glow)"/>
+                    <circle cx="40" cy="50" r="2" fill="#ffffff" class="glowing-eye-center" />
+                    <!-- Antenna -->
+                    <line x1="50" y1="32" x2="50" y2="15" stroke="#e63946" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="50" cy="10" r="3" fill="#f4c20d" class="antenna-dot" filter="url(#glow)" />
+                    <!-- Thruster / Base -->
+                    <path d="M 40 68 L 45 78 L 55 78 L 60 68" fill="none" stroke="#e63946" stroke-width="2"/>
+                    <path class="thruster-fire" d="M 45 78 Q 50 95 55 78" fill="#e63946" opacity="0.6" filter="url(#glow)"/>
+                </svg>
+            </div>
+            
+            <div class="loading-track">
+                <div class="loading-progress" id="progress-bar"></div>
+            </div>
+            
+            <div class="loading-text">
+                <span class="loading-label">SYSTEM_BOOT</span>
+                <span id="progress-text" class="loading-percentage">0%</span>
+            </div>
+        </div>
+        <!-- Technical Decor -->
+        <div class="tech-decor top-left"></div>
+        <div class="tech-decor bottom-right"></div>
+    </div>
+
+    <!-- Custom Spider Cursor -->
+    <div id="robot-cursor" class="custom-cursor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+            <!-- Left legs (4 legs, bent) -->
+            <path d="M14 14 Q8 10 2 6" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M13 16 Q7 15 1 14" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M13 18 Q7 19 1 22" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M13 20 Q8 23 4 28" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Right legs (4 legs, bent) -->
+            <path d="M22 14 Q28 10 34 6" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M23 16 Q29 15 35 14" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M23 18 Q29 19 35 22" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M23 20 Q28 23 32 28" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Cephalothorax (head/upper body) -->
+            <ellipse cx="18" cy="15" rx="4.5" ry="4" fill="#e63946"/>
+            <!-- Abdomen (lower body) -->
+            <ellipse cx="18" cy="25" rx="5.5" ry="6" fill="#c0152a"/>
+            <!-- Abdomen marking -->
+            <path d="M18 20 Q15 23 18 27 Q21 23 18 20" fill="#e63946" opacity="0.5"/>
+            <!-- Eyes (2 white dots) -->
+            <circle cx="16" cy="13.5" r="1" fill="#fff"/>
+            <circle cx="20" cy="13.5" r="1" fill="#fff"/>
+            <!-- Eye pupils -->
+            <circle cx="16.3" cy="13.5" r="0.4" fill="#1a0000"/>
+            <circle cx="20.3" cy="13.5" r="0.4" fill="#1a0000"/>
+        </svg>
+    </div>
+
+    <!-- Main Content (Hidden until load completes) -->
+    <main id="main-content">
+        
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="nav-logo">
+                <span class="logo-text" data-hover="SHAREEF">PORTFOLIO</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#home" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="resume.pdf" target="_blank" class="nav-link resume-btn">[ Resume ]</a>
+            </nav>
+        </header>
+
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero-section">
+            <div id="particles-js"></div>
+            
+            <div class="hero-card">
+                <div class="hero-grid">
+                    <!-- Image Side (Moved to code order top for left-align in grid) -->
+                    <div class="hero-visual">
+                        <div class="profile-image-container">
+                            <img src="assets/hero_avatar.png" alt="Futuristic Robotics Avatar" class="hero-avatar">
+                        </div>
+                    </div>
+                    
+                    <!-- Text Content Side -->
+                    <div class="hero-content">
+                        <h1 class="hero-title">Hi, I am <br><span class="highlight">Shareef</span></h1>
+                        <h2 class="hero-role">Robotics Engineer</h2>
+                        
+                        <div class="hero-philosophy">
+                            <p>
+                                I believe the future of robotics isn't just about building machines; 
+                                it's about creating intelligent systems that seamlessly bridge the gap 
+                                between complex software algorithms and precise physiological movement.
+                            </p>
+                        </div>
+                        
+                        <div class="hero-actions">
+                            <a href="resume.pdf" target="_blank" class="btn btn-outline">
+                                Resume &rarr;
+                            </a>
+                            <div class="social-links">
+                                <!-- LinkedIn Icon -->
+                                <a href="http://www.linkedin.com/in/shareefbaba" target="_blank" class="social-icon" aria-label="LinkedIn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                                <!-- GitHub Icon -->
+                                <a href="https://github.com/Shareefbaba" target="_blank" class="social-icon" aria-label="GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- End Home -->
+
+        <!-- About Summary Section (On Home Page) -->
+        <section id="about" class="content-section home-about-summary">
+            <div class="about-me-box">
+                <div class="summary-text-block">
+                    <h2 class="section-title"><span class="highlight">About Me</span></h2>
+                    <div class="summary-content">
+                        <p>
+                            I specialize in designing, simulating, and deploying intelligent robotics systems. 
+                            My work is focused on creating autonomous machines that solve real-world problems 
+                            by integrating robust hardware control with advanced computer vision and machine learning.
+                        </p>
+                        <p>
+                            From complex kinematic modeling to writing optimized ROS nodes, I thrive at the intersection 
+                            of mechanics and code.
+                        </p>
+                    </div>
+                    <a href="about.html" class="btn btn-outline" style="margin-top: 30px;">
+                        [Read_Full_Bio]
+                    </a>
+                </div>
+                <div class="tech-stats-box">
+                    <div class="stat-line"><span class="stat-label">Primary Stack:</span> <span class="stat-val">ROS 2, C++, Python</span></div>
+                    <div class="stat-line"><span class="stat-label">Status:</span> <span class="stat-val highlight">Open to Opportunities</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorized Skills Section -->
+        <section id="skills" class="content-section" style="margin-top: 100px; text-align: center;">
+            <h2 class="section-title" style="justify-content: center;"><span class="highlight">Skills</span></h2>
+            <p class="section-desc" style="margin-bottom: 60px;">Specialized tools and languages designed for high-performance robotics.</p>
+            
+            <div class="skills-grid">
+
+                <!-- Card 1: Programming -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">Programming</h3>
+                    <ul class="skill-list">
+                        <li>Python <span>(Primary / ML / Scripting)</span></li>
+                        <li>C++ <span>(ROS2 / High Performance)</span></li>
+                        <li>MATLAB <span>(Basic / Simulation)</span></li>
+                        <li>SQL <span>(Basic / Data Queries)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Robotics Frameworks -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </div>
+                    <h3 class="card-title">Robotics Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>ROS2 &amp; Nav2 Stack <span>(Core Middleware)</span></li>
+                        <li>MoveIt2 <span>(Motion Planning)</span></li>
+                        <li>BT.CPP &amp; TF2 <span>(Behavior Trees / Transforms)</span></li>
+                        <li>URDF / XACRO <span>(Robot Modeling)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Simulation Tools -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h3 class="card-title">Simulation Tools</h3>
+                    <ul class="skill-list">
+                        <li>Gazebo Classic / Ignition <span>(Physics Sim)</span></li>
+                        <li>RViz2 <span>(Visualization)</span></li>
+                        <li>Isaac Sim <span>(NVIDIA GPU Sim)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Vision & Perception -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h3 class="card-title">Vision &amp; Perception</h3>
+                    <ul class="skill-list">
+                        <li>OpenCV &amp; Open3D <span>(Image / Point Cloud)</span></li>
+                        <li>LiDAR Processing <span>(3D Mapping)</span></li>
+                        <li>ZED 2i Depth Camera <span>(Stereo Vision)</span></li>
+                        <li>Costmap Generation <span>(Nav Layers)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 5: Localization & SLAM -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <h3 class="card-title">Localization &amp; SLAM</h3>
+                    <ul class="skill-list">
+                        <li>FAST-LIO &amp; LIO-SAM <span>(LiDAR-Inertial)</span></li>
+                        <li>SLAM Fundamentals <span>(Mapping)</span></li>
+                        <li>Odometry Drift Analysis <span>(Accuracy)</span></li>
+                        <li>Sensor Fusion Concepts <span>(IMU + LiDAR)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: Mechanical Design -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.16 3.63a2.41 2.41 0 0 0-3.41 0l-12.6 12.6a2 2 0 0 0-.54 1.05l-1 5a2 2 0 0 0 2.4 2.4l5-1a2 2 0 0 0 1.05-.54l12.6-12.6a2.41 2.41 0 0 0 0-3.41z"></path><line x1="16" y1="5" x2="19" y2="8"></line></svg>
+                    </div>
+                    <h3 class="card-title">Mechanical Design</h3>
+                    <ul class="skill-list">
+                        <li>SolidWorks &amp; CATIA <span>(3D CAD)</span></li>
+                        <li>AutoCAD <span>(2D Drafting)</span></li>
+                        <li>MSC Adams &amp; ANSYS <span>(Simulation / FEA)</span></li>
+                        <li>3D Printing <span>(Rapid Prototyping)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 7: Embedded Systems -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                    </div>
+                    <h3 class="card-title">Embedded Systems</h3>
+                    <ul class="skill-list">
+                        <li>Arduino <span>(Microcontrollers)</span></li>
+                        <li>Motor Drivers &amp; Servo Systems <span>(Actuation)</span></li>
+                        <li>IR / Ultrasonic Sensors <span>(Proximity)</span></li>
+                        <li>IMU &amp; LiDAR <span>(Sensing)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 8: Data Science -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
+                    <h3 class="card-title">Data Science</h3>
+                    <ul class="skill-list">
+                        <li>Machine Learning <span>(Model Training)</span></li>
+                        <li>EDA <span>(Exploratory Analysis)</span></li>
+                        <li>Data Wrangling <span>(Cleaning / Processing)</span></li>
+                        <li>Visualization <span>(Charts / Dashboards)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 9: Software Tools -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    </div>
+                    <h3 class="card-title">Software Tools</h3>
+                    <ul class="skill-list">
+                        <li>Git &amp; GitHub <span>(Version Control)</span></li>
+                        <li>VS Code &amp; PyCharm <span>(IDEs)</span></li>
+                        <li>Jupyter Notebook <span>(Prototyping)</span></li>
+                        <li>Power BI <span>(Data Reporting)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 10: Soft Skills -->
+                <div class="glass-card skill-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 class="card-title">Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Project Management <span>(Planning / Execution)</span></li>
+                        <li>Leadership &amp; Teamwork <span>(Cross-functional)</span></li>
+                        <li>Problem Solving <span>(Analytical)</span></li>
+                        <li>Documentation <span>(Technical Writing)</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+        <!-- Professional Certificates Section -->
+        <section id="certificates" class="content-section" style="margin-top: 100px; text-align: center;">
+            <h2 class="section-title" style="justify-content: center;"><span class="highlight">Professional Certificates</span></h2>
+            <p class="section-desc" style="margin-bottom: 60px;">Validated expertise from industry leaders and prestigious institutions.</p>
+            
+            <div class="certificates-grid">
+                <!-- Certificate 1: CATIA -->
+                <div class="cert-card">
+                    <div class="cert-border"></div>
+                    <div class="cert-content">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                        </div>
+                        <h3 class="cert-title">CATIA</h3>
+                        <p class="cert-issuer">Internshala</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">2023</span>
+                            <a href="#" class="cert-link">Verify <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: Arduino -->
+                <div class="cert-card">
+                    <div class="cert-border"></div>
+                    <div class="cert-content">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                        </div>
+                        <h3 class="cert-title">Arduino Complete Course (30+ Projects)</h3>
+                        <p class="cert-issuer">Udemy</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">2023</span>
+                            <a href="#" class="cert-link">Verify <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: ROS2 Beginners -->
+                <div class="cert-card">
+                    <div class="cert-border"></div>
+                    <div class="cert-content">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        </div>
+                        <h3 class="cert-title">ROS2 for Beginners</h3>
+                        <p class="cert-issuer">Udemy</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">2024</span>
+                            <a href="#" class="cert-link">Verify <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 4: ROS2 Level 2 -->
+                <div class="cert-card">
+                    <div class="cert-border"></div>
+                    <div class="cert-content">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3 class="cert-title">ROS2 Level 2 – TF, URDF, RViz, Gazebo</h3>
+                        <p class="cert-issuer">Udemy</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">2024</span>
+                            <a href="#" class="cert-link">Verify <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 5: IBM Data Science -->
+                <div class="cert-card">
+                    <div class="cert-border"></div>
+                    <div class="cert-content">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        </div>
+                        <h3 class="cert-title">IBM Data Science Professional Certificate</h3>
+                        <p class="cert-issuer">Coursera / IBM</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">2024</span>
+                            <a href="#" class="cert-link">Verify <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="certificates.html" class="btn btn-outline" style="min-width: 250px;">View Full Credentials</a>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section" style="margin-top: 100px; margin-bottom: 100px;">
+            <div class="contact-split-container">
+                
+                <!-- Left Column: Info & Details -->
+                <div class="contact-info-panel">
+                    <h2 class="section-title"><span class="highlight">Let's Connect</span></h2>
+                    <h3 class="contact-subhead">Ready to engineer the future?</h3>
+                    <p class="contact-desc">
+                        Whether you are architecting a next-generation robotic system, searching for a domain expert to elevate your engineering team, or looking to collaborate on machine intelligence—my inbox is always open. Let's create something extraordinary.
+                    </p>
+                    
+                    <div class="glass-card contact-details-box" style="margin-top: 15px; padding: 40px; border-radius: 12px;">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                            <div class="detail-text">
+                                <span class="detail-label">Full Name</span>
+                                <span class="detail-value">Shareef</span>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div class="detail-text">
+                                <span class="detail-label">Email Address</span>
+                                <span class="detail-value">shareefbaba1404@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div class="detail-text">
+                                <span class="detail-label">Phone Network</span>
+                                <span class="detail-value">+91 6305865617</span>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="detail-text">
+                                <span class="detail-label">Location</span>
+                                <span class="detail-value">Hyderabad, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Terminal Form -->
+                <div class="contact-terminal">
+                    <div class="terminal-header">
+                        <div class="mac-buttons">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                        <div class="terminal-title">Secure Communication Link</div>
+                    </div>
+                    
+                    <div class="terminal-body">
+                        <form class="cyber-form" id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name">Identifier (Name)</label>
+                                <div class="input-line"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email">Reply Address (Email)</label>
+                                <div class="input-line"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea id="message" required placeholder=" " rows="4"></textarea>
+                                <label for="message">Transmission Payload (Message)</label>
+                                <div class="input-line"></div>
+                            </div>
+                            
+                            <button type="submit" class="transmit-btn">
+                                <span class="btn-text">TRANSMIT DATA</span>
+                                <div class="btn-glitch"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="send-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Footer -->
+        <footer class="custom-footer">
+            <div class="footer-logo">
+                <svg viewBox="0 0 100 100" class="footer-svg" width="60" height="60">
+                    <path d="M 15 50 Q 50 15 85 50 Q 50 85 15 50 Z" fill="#14141c" stroke="#fff" stroke-width="2" />
+                    <line x1="30" y1="50" x2="70" y2="50" stroke="#050505" stroke-width="8" stroke-linecap="round" />
+                    <circle cx="40" cy="50" r="4" fill="#fff" />
+                    <line x1="50" y1="32" x2="50" y2="15" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="50" cy="10" r="3" fill="#fff" />
+                    <path d="M 40 68 L 45 78 L 55 78 L 60 68" fill="none" stroke="#fff" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 All rights reserved by Shareef</p>
+            </div>
+            <a href="#" class="back-to-top" title="Back to top">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </a>
+        </footer>
+    </main>
+
+    <script src="particles-config.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Initialize Drag and Drop for Skills Grid -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var el = document.querySelector('.skills-grid');
+            if (el) {
+                var sortable = Sortable.create(el, {
+                    animation: 250,
+                    ghostClass: 'sortable-ghost', // Class when dragging
+                    chosenClass: 'sortable-chosen', // Class when selected
+                    dragClass: 'sortable-drag' // Class of the dragging item
+                });
+            }
+        });
+    </script>
+</body>
+</html>

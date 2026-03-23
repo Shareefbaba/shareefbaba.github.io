@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareef | About & Experience</title>
+    <meta name="description" content="Learn about Shareef's robotics engineering background, work experience at Tensrai and SRM University, education, and personal interests.">
+    <meta property="og:title" content="Shareef | About & Experience">
+    <meta property="og:description" content="Robotics Engineer with expertise in ROS 2, MoveIt2, Gazebo, and autonomous systems development.">
+    <meta property="og:type" content="website">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- About specific styles -->
+    <style>
+        .timeline-section {
+            margin-top: 150px;
+            margin-bottom: 100px;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--accent-cyan), var(--accent-cyan), transparent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--bg-color);
+            border: 3px solid var(--accent-cyan);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -8px;
+            border-color: #f4c20d;
+            box-shadow: 0 0 10px #f4c20d;
+        }
+        
+        .timeline-content {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+        
+        .right .timeline-content:hover {
+            border-color: rgba(244, 194, 13, 0.3);
+        }
+        
+        .timeline-date {
+            font-family: var(--font-mono);
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .right .timeline-date {
+            color: #f4c20d;
+        }
+        
+        .timeline-title {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-org {
+            font-family: var(--font-mono);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        @media screen and (max-width: 900px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::after {
+                left: 23px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+        /* Hobbies Section */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hobby-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(230, 57, 70, 0.05);
+        }
+        
+        .hobby-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .hobby-title {
+            padding: 20px;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="loaded">
+    <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
+    
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text" data-hover="SHAREEF">PORTFOLIO</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <a href="resume.pdf" target="_blank" class="nav-link resume-btn">[ Resume ]</a>
+        </nav>
+    </header>
+
+    <main id="main-content" style="opacity: 1;">
+        
+        <section class="content-section timeline-section">
+            <h2 class="section-title" style="justify-content: center; text-align: center; font-size: 3rem; margin-bottom: 60px;"><span class="highlight">Work Experience</span></h2>
+            
+            <div class="timeline-container">
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Feb 2026 - Present</span>
+                        <h3 class="timeline-title">Junior Robotics Software Developer</h3>
+                        <p class="timeline-org">Tensrai</p>
+                        <ul class="timeline-desc" style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                            <li>Developing and customizing Nav2 (Navigation2) stack for autonomous mobile robots.</li>
+                            <li>Working on robot navigation, localization, and parameter tuning for improved performance.</li>
+                            <li>Conducting research and development (R&D) to improve navigation algorithms and robot behavior.</li>
+                            <li>Mentoring interns on Nav2 configuration and parameter tuning.</li>
+                            <li>Integrating sensor data and perception pipelines for real-world robot navigation.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">27-Jan 2025 - 30-July 2025</span>
+                        <h3 class="timeline-title">Project Engineer (Mechanical & Robotics System Dev)</h3>
+                        <p class="timeline-org">SRM University - Amaravathi</p>
+                        <ul class="timeline-desc" style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                            <li>Designed 3D mechanical models, assemblies, and robotic components using SolidWorks and performed robot simulations in ROS2, Gazebo, and MoveIt2.</li>
+                            <li>Managed complete project workflows including planning, scheduling, documentation, and execution of robotics development tasks.</li>
+                            <li>Handled procurement of components, communicated with vendors, and coordinated industrial visits for evaluating manufacturing and fabrication options.</li>
+                            <li>Assigned tasks, supervised B. Tech students and interns, and guided them in CAD design, robotics concepts, and ROS2-based development.</li>
+                            <li>Integrated sensors, motors, and actuators into the robotic system and supported testing, troubleshooting, and validation of prototypes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">28-Nov 2019 - 31-May 2020</span>
+                        <h3 class="timeline-title">Industrial Training at Hero Showroom Service & Maintenance</h3>
+                        <p class="timeline-org">Hero Showroom - VM Banjara</p>
+                        <ul class="timeline-desc" style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                            <li>Performed routine diagnostics, maintenance, and repair of two-wheelers.</li>
+                            <li>Assisted customers by explaining service details and recommendations.</li>
+                            <li>Handled parts inventory and maintained service-related documentation.</li>
+                            <li>Ensured adherence to safety standards and improved service workflow efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-section timeline-section">
+            <h2 class="section-title" style="justify-content: center; text-align: center; font-size: 3rem; margin-bottom: 60px;"><span class="highlight" style="color: #f4c20d;">Education</span></h2>
+            
+            <div class="timeline-container">
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">June 2023</span>
+                        <h3 class="timeline-title">Bachelor of Technology, Mechanical Engineering</h3>
+                        <p class="timeline-org">Khammam Institute of Technology and Science (affiliated with JNTUH)</p>
+                        <p class="timeline-desc">
+                            CGPA: 7.28
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">June 2020</span>
+                        <h3 class="timeline-title">Diploma in Mechanical Engineering</h3>
+                        <p class="timeline-org">Jawaharlal Nehru Govt Polytechnic Ramanthapur</p>
+                        <p class="timeline-desc">
+                            Percentage: 81%
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-section timeline-section" style="margin-top: 50px;">
+            <h2 class="section-title" style="justify-content: center; text-align: center; font-size: 3rem; margin-bottom: 20px;"><span class="highlight" style="color: #e63946;">Hobbies & Interests</span></h2>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-bottom: 50px; font-family: var(--font-mono);">Beyond engineering, I enjoy balancing work with creative and athletic pursuits.</p>
+            
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=600&auto=format&fit=crop" alt="Movies" class="hobby-image">
+                    <div class="hobby-title">Movies</div>
+                </div>
+                <div class="hobby-card">
+                    <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=600&auto=format&fit=crop" alt="Cricket" class="hobby-image">
+                    <div class="hobby-title">Cricket</div>
+                </div>
+                <div class="hobby-card">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=600&auto=format&fit=crop" alt="Cooking" class="hobby-image">
+                    <div class="hobby-title">Cooking</div>
+                </div>
+                <div class="hobby-card">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop" alt="Traveling" class="hobby-image">
+                    <div class="hobby-title">Traveling</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="margin-top: 80px; margin-bottom: 80px; text-align: center;">
+            <p style="font-family: var(--font-mono); font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); margin-bottom: 10px;">Explore More</p>
+            <h2 class="section-title" style="justify-content: center; font-size: 2.5rem; margin-bottom: 40px; color: #fff;">Navigate Through My Work</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 800px; margin: 0 auto;">
+                <a href="index.html#about" class="btn-outline" style="padding: 10px 25px;">Skills</a>
+                <a href="projects.html" class="btn-outline" style="padding: 10px 25px;">Projects</a>
+                <a href="certificates.html" class="btn-outline" style="padding: 10px 25px;">Certificates</a>
+                <a href="https://github.com/Shareefbaba" target="_blank" class="btn-outline" style="padding: 10px 25px;">GitHub</a>
+                <a href="index.html#contact" class="btn-outline" style="padding: 10px 25px;">Get In Touch</a>
+            </div>
+        </section>
+
+        <!-- Custom Footer -->
+        <footer class="custom-footer">
+            <div class="footer-logo">
+                <svg viewBox="0 0 100 100" class="footer-svg" width="60" height="60">
+                    <path d="M 15 50 Q 50 15 85 50 Q 50 85 15 50 Z" fill="#14141c" stroke="#fff" stroke-width="2" />
+                    <line x1="30" y1="50" x2="70" y2="50" stroke="#050505" stroke-width="8" stroke-linecap="round" />
+                    <circle cx="40" cy="50" r="4" fill="#fff" />
+                    <line x1="50" y1="32" x2="50" y2="15" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="50" cy="10" r="3" fill="#fff" />
+                    <path d="M 40 68 L 45 78 L 55 78 L 60 68" fill="none" stroke="#fff" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 All rights reserved by Shareef</p>
+            </div>
+            <a href="#" class="back-to-top" title="Back to top">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </a>
+        </footer>
+    </main>
+
+    <script src="particles-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
