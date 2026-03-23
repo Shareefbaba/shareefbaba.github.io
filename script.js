@@ -240,10 +240,57 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 100);
 
             setTimeout(() => {
-                if (dot.parentNode) {
-                    dot.parentNode.removeChild(dot);
-                }
+                if (dot.parentNode) dot.parentNode.removeChild(dot);
             }, 1100);
         }
+    }
+
+    // ─────────────────────────────────────────────
+    //  Contact Form — Web3Forms Submission
+    // ─────────────────────────────────────────────
+    const contactForm = document.getElementById('contact-form');
+    const formStatus  = document.getElementById('form-status');
+    const submitBtn   = document.getElementById('submit-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.querySelector('.btn-text').textContent = 'TRANSMITTING...';
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#4ade80';
+                    formStatus.style.background = 'rgba(74,222,128,0.08)';
+                    formStatus.style.border = '1px solid rgba(74,222,128,0.3)';
+                    formStatus.textContent = '✓ TRANSMISSION_SUCCESS — Message received. Will respond soon.';
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (err) {
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#e63946';
+                formStatus.style.background = 'rgba(230,57,70,0.08)';
+                formStatus.style.border = '1px solid rgba(230,57,70,0.3)';
+                formStatus.textContent = '✗ TRANSMISSION_FAILED — Email directly: shareefbaba1404@gmail.com';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.querySelector('.btn-text').textContent = 'TRANSMIT DATA';
+                setTimeout(() => { formStatus.style.display = 'none'; }, 8000);
+            }
+        });
     }
 });
